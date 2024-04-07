@@ -8,7 +8,7 @@ from Components.LoadURL import LoadURL
 app = Flask(__name__)
 
 DATABASE_URI = os.getenv('DATABASE_URL')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://u7mm6dbokeljg1:p481bc16cf7d5753292808f86fa98149b5de9612a0719b1d8e6e6a93cc823bc71@cdgn4ufq38ipd0.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d1kigkf5avt8fh'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://u7mm6dbokeljg1:p481bc16cf7d5753292808f86fa98149b5de9612a0719b1d8e6e6a93cc823bc71@cdgn4ufq38ipd0.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d1kigkf5avt8fh'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
