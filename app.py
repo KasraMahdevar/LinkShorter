@@ -53,10 +53,10 @@ def load_url(path: str):
 
 
 # before Requests processed
-# @app.before_request
-# def create_db():
-#     db.create_all()
-#     # db.drop_all()
+@app.before_request
+def create_db():
+    db.create_all()
+    # db.drop_all()
 
 
 if __name__ == '__main__':
