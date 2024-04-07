@@ -8,7 +8,7 @@ from Components.LoadURL import LoadURL
 app = Flask(__name__)
 
 # Database TODO: must complete (dynamic)
-DATABASE_URI = os.getenv('DATABASE_URL', "sqlite:///C:/All Files/Projects/Flask/LinkShorter/Tabels/links.db")
+DATABASE_URI = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
