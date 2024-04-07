@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Link Shorten</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akshar&amp;display=swap">
+    <link rel="stylesheet" href="../static/assets/css/styles.min.css">
+</head>
+<body><h1 class="text-center"
+          style="height: 61px;font-family: Acme, sans-serif;margin-top: 150px;text-shadow: 4px 5px var(--bs-emphasis-color);">
+    <strong><span style="color: rgb(252, 191, 73);">Paste the URL to be shortened</span></strong></h1>
+<form action='/shorten_link'
+      class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center"
+      method="post" style="margin-top: 25px;margin-right: 12px;margin-bottom: 50px;margin-left: 12px;"><input
+        class="border rounded-pill shadow-sm form-control form-control-sm" type="url" name="url"
+        placeholder="Enter the Link here" required=""
+        style="background: var(--bs-secondary-bg);width: 300px;height: 40px;color: var(--bs-emphasis-color);text-align: left;margin-right: 15px;font-family: Akshar, sans-serif;">
+    <button class="btn btn-primary text-center d-flex justify-content-center" type="submit"
+            style="color: var(--bs-secondary-bg);font-family: Acme, sans-serif;text-align: center;background: #219ebc;border-radius: 7px;border: 2px solid var(--bs-secondary-bg);width: 145px;">
+        URL Shorten
+    </button>
+</form>
+{% if new_url %}
+    <div class="container text-center" style="margin-bottom: 150px;">
+        <p class="text-center" id="new_url"
+           style="color: #ffb703;font-size: 17px;font-family: Acme, sans-serif;font-weight: bold;text-decoration: underline;height: 40px;">
+            {{ new_url }}
+        </p>
+        <button class="btn btn-primary text-center" id="copy_btn" type="button" onclick="copy_text()"
+                style="color: var(--bs-emphasis-color);font-family: Acme, sans-serif;background: #ffb703;width: 145px;">
+            Copy
+            URL
+        </button>
+    </div>
+{% endif %}
+{% if error %}
+    <div class="alert alert-danger text-center" role="alert">
+        {{ error }}
+    </div>
+{% endif %}
+<footer class="text-center">
+    <div class="container-fluid text-muted py-4 py-lg-5" style="background: #ffb703;"><p class="mb-0"
+                                                                                         style="color: var(--bs-emphasis-color);text-align: center;font-size: 16px;font-family: Akshar, sans-serif;">
+        Programmed with 💝 by Kasra Mahdevar</p></div>
+</footer>
+<script defer src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+</html>
